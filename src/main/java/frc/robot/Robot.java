@@ -5,6 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 //selam aq
+//değil meraba aq
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
