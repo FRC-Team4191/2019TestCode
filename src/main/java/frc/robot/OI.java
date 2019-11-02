@@ -10,7 +10,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.arm;
+import frc.robot.commands.armLower;
+import frc.robot.commands.ballTaker;;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -22,15 +23,18 @@ public class OI {
 
   JoystickButton topat = new JoystickButton(joystick0,RobotMap.topat);
   JoystickButton topal = new JoystickButton(joystick0,RobotMap.topal);
+  JoystickButton kolkaldir = new JoystickButton(joystick0,RobotMap.kolkaldir);
+  JoystickButton kolindir = new JoystickButton(joystick0,RobotMap.kolindir);
 
   public double GetJoystickRawAxis(int axis){
    return joystick0.getRawAxis(axis);
   }
 
   public OI() {
-  topat.whileHeld(new arm(1));
-  topal.whileHeld(new arm(-1));
-
+  topat.whileHeld(new ballTaker(1));
+  topal.whileHeld(new ballTaker(-1));
+  kolindir.whileHeld(new armLower());
+  kolkaldir.whileHeld(new armRaiser());
   }
 
 

@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.driveTrain;
 import frc.robot.subsystems.robotArm;
+import frc.robot.subsystems.ballIntake;;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,8 +23,9 @@ import frc.robot.subsystems.robotArm;
  */
 public class Robot extends TimedRobot {
   public static OI m_oi;
-  public static driveTrain DriveTrain = new driveTrain();
-  public static robotArm robotArm = new robotArm();
+  public static driveTrain DriveTrain;
+  public static ballIntake BallIntake;
+  public static robotArm RobotArm;
 
 
 
@@ -34,6 +36,9 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
+    DriveTrain= new driveTrain();
+    BallIntake = new ballIntake();
+    RobotArm = new robotArm();
   }
 
   /**
