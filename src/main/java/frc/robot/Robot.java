@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.driveTrain;
+import frc.robot.subsystems.robotArm;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,6 +23,8 @@ import frc.robot.subsystems.driveTrain;
 public class Robot extends TimedRobot {
   public static OI m_oi;
   public static driveTrain DriveTrain = new driveTrain();
+  public static robotArm robotArm = new robotArm();
+
 
 
   /**
