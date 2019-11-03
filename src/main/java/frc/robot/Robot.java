@@ -8,9 +8,9 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.driveTrain;
+import frc.robot.subsystems.elevator;
 import frc.robot.subsystems.robotArm;
 import frc.robot.subsystems.ballIntake;;
 
@@ -26,6 +26,7 @@ public class Robot extends TimedRobot {
   public static driveTrain DriveTrain;
   public static ballIntake BallIntake;
   public static robotArm RobotArm;
+  public static elevator Elevator;
 
 
 
@@ -39,6 +40,7 @@ public class Robot extends TimedRobot {
     DriveTrain= new driveTrain();
     BallIntake = new ballIntake();
     RobotArm = new robotArm();
+    Elevator = new elevator();
   }
 
   /**
