@@ -3,9 +3,8 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ballTaker extends Command {
-  int kol;
-  public ballTaker() {
+public class ballThrower extends Command {
+  public ballThrower() {
     requires(Robot.BallIntake);
   }
 
@@ -15,7 +14,7 @@ public class ballTaker extends Command {
 
   @Override
   protected void execute() {
-    Robot.BallIntake.topal();
+    Robot.BallIntake.topfirlat();
   }
 
   @Override

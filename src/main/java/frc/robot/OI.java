@@ -8,10 +8,11 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.armLower;
-import frc.robot.commands.ballTaker;;
+import frc.robot.commands.armRaiser;
+import frc.robot.commands.ballTaker;
+import frc.robot.commands.ballThrower;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -31,8 +32,8 @@ public class OI {
   }
 
   public OI() {
-  topat.whileHeld(new ballTaker(1));
-  topal.whileHeld(new ballTaker(-1));
+  topat.whileHeld(new ballThrower());
+  topal.whileHeld(new ballTaker());
   kolindir.whileHeld(new armLower());
   kolkaldir.whileHeld(new armRaiser());
   }
