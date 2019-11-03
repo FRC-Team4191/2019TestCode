@@ -12,7 +12,10 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.driveTrain;
 import frc.robot.subsystems.elevator;
 import frc.robot.subsystems.robotArm;
-import frc.robot.subsystems.ballIntake;;
+import frc.robot.subsystems.ballIntake;
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.cameraserver.CameraServer;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -28,7 +31,7 @@ public class Robot extends TimedRobot {
   public static robotArm RobotArm;
   public static elevator Elevator;
 
-
+  UsbCamera camera;
 
   /**
    * This function is run when the robot is first started up and should be
@@ -41,6 +44,8 @@ public class Robot extends TimedRobot {
     BallIntake = new ballIntake();
     RobotArm = new robotArm();
     Elevator = new elevator();
+    
+    camera = CameraServer.getInstance().startAutomaticCapture();
   }
 
   /**
