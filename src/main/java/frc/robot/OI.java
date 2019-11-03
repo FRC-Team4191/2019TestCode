@@ -13,6 +13,8 @@ import frc.robot.commands.armLower;
 import frc.robot.commands.armRaiser;
 import frc.robot.commands.ballTaker;
 import frc.robot.commands.ballThrower;
+import frc.robot.commands.elevatorDown;
+import frc.robot.commands.elevatorUp;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -21,11 +23,14 @@ import frc.robot.commands.ballThrower;
 public class OI {
   
   Joystick joystick0 = new Joystick(0);
+  Joystick joystick1 = new Joystick(1);
 
-  JoystickButton topat = new JoystickButton(joystick0,RobotMap.topat);
-  JoystickButton topal = new JoystickButton(joystick0,RobotMap.topal);
-  JoystickButton kolkaldir = new JoystickButton(joystick0,RobotMap.kolkaldir);
-  JoystickButton kolindir = new JoystickButton(joystick0,RobotMap.kolindir);
+  JoystickButton topat = new JoystickButton(joystick1,RobotMap.topat);
+  JoystickButton topal = new JoystickButton(joystick1,RobotMap.topal);
+  JoystickButton kolkaldir = new JoystickButton(joystick1,RobotMap.kolkaldir);
+  JoystickButton kolindir = new JoystickButton(joystick1,RobotMap.kolindir);
+  JoystickButton asansorkaldir = new JoystickButton(joystick0,RobotMap.asansorkaldir);
+  JoystickButton asansorindir = new JoystickButton(joystick0,RobotMap.asansorindir);
 
   public double GetJoystickRawAxis(int axis){
    return joystick0.getRawAxis(axis);
@@ -36,6 +41,8 @@ public class OI {
   topal.whileHeld(new ballTaker());
   kolindir.whileHeld(new armLower());
   kolkaldir.whileHeld(new armRaiser());
+  asansorindir.whileHeld(new elevatorDown());
+  asansorkaldir.whileHeld(new elevatorUp());
   }
 
 
