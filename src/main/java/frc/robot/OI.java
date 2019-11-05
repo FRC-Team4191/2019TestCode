@@ -15,6 +15,7 @@ import frc.robot.commands.ballTaker;
 import frc.robot.commands.ballThrower;
 import frc.robot.commands.elevatorDown;
 import frc.robot.commands.elevatorUp;
+import frc.robot.commands.ledController;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -31,6 +32,7 @@ public class OI {
   JoystickButton kolindir = new JoystickButton(joystick1,RobotMap.kolindir);
   JoystickButton asansorkaldir = new JoystickButton(joystick0,RobotMap.asansorkaldir);
   JoystickButton asansorindir = new JoystickButton(joystick0,RobotMap.asansorindir);
+  JoystickButton ledac = new JoystickButton(joystick1,RobotMap.ledac);
 
   public double GetJoystickRawAxis(int axis){
    return joystick0.getRawAxis(axis);
@@ -43,6 +45,7 @@ public class OI {
   kolkaldir.whileHeld(new armRaiser());
   asansorindir.whileHeld(new elevatorDown());
   asansorkaldir.whileHeld(new elevatorUp());
+  ledac.whenPressed(new ledController());
   }
 
 

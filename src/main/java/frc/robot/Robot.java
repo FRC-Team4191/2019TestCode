@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.driveTrain;
 import frc.robot.subsystems.elevator;
+import frc.robot.subsystems.leds;
 import frc.robot.subsystems.robotArm;
 import frc.robot.subsystems.ballIntake;
 import edu.wpi.cscore.UsbCamera;
@@ -30,6 +31,7 @@ public class Robot extends TimedRobot {
   public static ballIntake BallIntake;
   public static robotArm RobotArm;
   public static elevator Elevator;
+  public static leds Leds;
 
   UsbCamera camera;
 
@@ -44,7 +46,7 @@ public class Robot extends TimedRobot {
     BallIntake = new ballIntake();
     RobotArm = new robotArm();
     Elevator = new elevator();
-    
+    Leds = new leds();
     camera = CameraServer.getInstance().startAutomaticCapture();
   }
 
