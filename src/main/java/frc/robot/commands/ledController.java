@@ -21,11 +21,8 @@ public class ledController extends Command {
   @Override
   protected void initialize() {
     Robot.Leds.led();
-    if (Robot.Leds.a == true){
-      Robot.Leds.a = false;}
-      else{
-      Robot.Leds.a = true;
-      }
+    Robot.Leds.a = !Robot.Leds.a;
+    Robot.Leds.finish = true;
     }
 
   // Called repeatedly when this Command is scheduled to run
@@ -36,12 +33,13 @@ public class ledController extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return Robot.Leds.finish;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.Leds.finish = false;
   }
 
   // Called when another command which requires one or more of the same

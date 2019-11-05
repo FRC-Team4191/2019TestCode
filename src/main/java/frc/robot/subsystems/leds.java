@@ -18,10 +18,11 @@ public class leds extends Subsystem {
   // here. Call these from Commands.
   Spark leds = new Spark(5);
   public boolean a = false;
+  public boolean finish = false;
   public void led(){
-    if (a==false) {
+    if (!a) {
     leds.set(0.5);
-    } else{
+    } else if(a){
     leds.set(0);
     }
   }
