@@ -4,7 +4,7 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-//deneme2
+
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
