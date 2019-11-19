@@ -48,6 +48,7 @@ public class Robot extends TimedRobot {
     Elevator = new elevator();
     Leds = new leds();
     camera = CameraServer.getInstance().startAutomaticCapture();
+    camera.setResolution(320, 240);
   }
 
   /**
